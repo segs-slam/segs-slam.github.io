@@ -1,6 +1,6 @@
-# PRGS-SLAM: Progressive Refined  3D Gaussian Splatting for Simultaneous Localization and Photorealistic Mapping
+# PRGS-SLAM: Progressive Refined  3D Gaussian Splatting for for Monocular, Stereo, and RGB-D SLAM
 
-Paper website for the [PRGS-SLAM](https://prgs-slam.github.io/).
+This is the repository that contains source code for the [PRGS-SLAM website](https://prgs-slam.github.io/).
 
 
 # Website License
