@@ -211,31 +211,31 @@
           </p>
         </div>
 
-          <div class="container">
+        <div class="container">
           <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(0)">room1</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(0)">room 0</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" onclick="replicamonoSceneEvent(1)">room2</a>
+                <a class="nav-link active" onclick="replicamonoSceneEvent(1)">room 1</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(2)">counter</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(2)">room 2</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(3)">flowers</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(3)">office 0</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(4)">garden</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(4)">office 1</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(5)">kitchen</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(5)">office 2</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(6)">stump</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(6)">office 3</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="replicamonoSceneEvent(7)">treehill</a>
+                <a class="nav-link" onclick="replicamonoSceneEvent(7)">office 4</a>
               </li>
           </ul>
           <div class="b-dics" style="width: 1000px; font-weight: 600;">
@@ -248,40 +248,109 @@
         </div>
 
         <br>
-             
-
-        <h3 class="title is-4">RGB-D</h3>
+        
         <div class="content has-text-justified">
           <p>
+             <b><span style="color: #0a0ae7"> TUM RGB-D Dataset</span></b>
+          </p>
+        </div>
         <div class="container">
-          <ul class="nav nav-tabs nav-fill nav-justified" id="ablation-3d-filter">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
               <li class="nav-item">
-                <a class="nav-link active" onclick="ablation3DEvent(0)">bicycle 1</a>
+                <a class="nav-link" onclick="tummonoSceneEvent(0)">fr1/xyz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(1)">bicycle 2</a>
+                <a class="nav-link active" onclick="tummonoSceneEvent(1)">fr2/desk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(2)">bicycle 3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(3)">garden 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(4)">garden 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(5)">treehill</a>
+                <a class="nav-link" onclick="tummonoSceneEvent(2)">fr3/long_office_household</a>
               </li>
           </ul>
           <div class="b-dics" style="width: 1000px; font-weight: 600;">
-              <img src="resources/360_stmt_ablation/bicycle_0_no3d.jpg" alt="Ours w/o 3D filter">
-              <img src="resources/360_stmt_ablation/bicycle_0_ours.jpg" alt="Mip-Splatting (ours)">
-              <img src="resources/360_stmt_ablation/bicycle_0_upgt.jpg" alt="GT (Training resolution)">
-              <img src="resources/360_stmt_ablation/bicycle_0_gt.jpg" alt="GT (8x resolution)">
-              
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
           </div>
         </div>
+
+        <br>
+             
+
+        <h3 class="title is-4">RGB-D</h3>
+
+          <div class="content has-text-justified">
+            <p>
+               <b><span style="color: #0a0ae7"> Replica Dataset</span></b>
+            </p>
+          </div>
+          <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(0)">room 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="replicargbdSceneEvent(1)">room 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(2)">room 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(3)">office 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(4)">office 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(5)">office 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(6)">office 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(7)">office 4</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="content has-text-justified">
+          <p>
+             <b><span style="color: #0a0ae7"> TUM RGB-D Dataset</span></b>
+          </p>
+        </div>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="tumrgbdSceneEvent(0)">fr1/xyz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="tumrgbdSceneEvent(1)">fr2/desk</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="tumrgbdSceneEvent(2)">fr3/long_office_household</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
+
+        <br>
+
 
         <br><br>
           </p>
@@ -289,20 +358,51 @@
         
 
 
-        <div class="content has-text-justified">
-          <p>
-           
-          </p>
-        </div>
 
         <h3 class="title is-4">Stereo</h3>
         <div class="content has-text-justified">
           <p>
-
+              <b><span style="color: #0a0ae7"> EuRoC MAV Dataset</span></b>
           </p>
         </div>
         
+          <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(0)">room 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="replicargbdSceneEvent(1)">room 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(2)">room 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(3)">office 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(4)">office 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(5)">office 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(6)">office 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(7)">office 4</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
 
+        <br>
 
 
         <h3 class="title is-4">Real-Time Interactive Viewer</h3>
