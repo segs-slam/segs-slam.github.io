@@ -207,7 +207,7 @@
         <h3 class="title is-4">Monocular</h3>
         <div class="content has-text-justified">
           <p>
-
+              Replica Dataset
           </p>
         </div>
 
@@ -248,78 +248,11 @@
         </div>
 
         <br>
-        
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/ship_3dgs_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
-        </div>
-        
+             
 
         <h3 class="title is-4">RGB-D</h3>
         <div class="content has-text-justified">
           <p>
-
-          </p>
-        </div>
-        
-
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="resources/bonsai_3dgs_ewa_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias9Merge"></canvas>
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            Here, we show more comparisons with 3DGS + EWA. Both models are trained with downsampled images with factor 8 and render at higher-resolution. 
-            GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
-          </p>
-        </div>
-
-        <h3 class="title is-4">Stereo</h3>
-        <div class="content has-text-justified">
-          <p>
-
-          </p>
-        </div>
-        
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/ship_3dgs_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
-        </div>
-
-
-
-        <h3 class="title is-4">Effectiveness of 2D Mip Filter</h3>
-        <div class="content has-text-justified">
-          <p>
-            Our 2D Mip filter simulates a 2D box filter in physical imaging process. It approximates exactly 1 pixel in screen space, thus effectively reducing aliasing artifacts.
-            As shown in the following video, removing the 2D Mip filter results in aliasing artifacts when zooming out.
-          </p>
-        </div>
-        
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias3" loop playsinline autoplay muted src="resources/chair_ours_no2d_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias3Merge"></canvas>
-        </div>
-
-        <h3 class="title is-4">Effectiveness of 3D Smoothing Filter</h3>
-        <div class="content has-text-justified">
-          <p>
-            The 3D smoothing filter constrains the size of the 3D Gaussian primitives based on the maximal sampling frequency induced by the training views, eliminating high frequency artifacts when zooming in. 
-            In the following comparisons, we train the models with downsampled images and render high resolution images to simulate zoom-in effects. Excluding the 3D smoothing filter results in high-frequency artifacts. 
-            Note that both models are trained with downsampled images with factor 8 and render at higher-resolution. 
-            GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
-          </p>
-        </div>
-        
-        <!-- 
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias5" loop playsinline autoplay muted src="./resources/drums_ours_no3d_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias5Merge"></canvas>
-        </div> 
-        -->
-
-
         <div class="container">
           <ul class="nav nav-tabs nav-fill nav-justified" id="ablation-3d-filter">
               <li class="nav-item">
@@ -351,54 +284,33 @@
         </div>
 
         <br><br>
+          </p>
+        </div>
+        
+
+
+        <div class="content has-text-justified">
+          <p>
+           
+          </p>
+        </div>
+
+        <h3 class="title is-4">Stereo</h3>
+        <div class="content has-text-justified">
+          <p>
+
+          </p>
+        </div>
+        
+
+
 
         <h3 class="title is-4">Real-Time Interactive Viewer</h3>
         <div class="content has-text-justified">
           <p>
-            Click the image to use the real-time interactive viewer. Please open the viewer with Chrome or Firefox. For more results, please check our <a href="https://niujinshuchong.github.io/mip-splatting-demo/">online viewer</a>. 
+            Coming soon... 
           </p>
         </div>
-
-        <div class="content-row">
-          <div class="demo-scene-panel" onclick="openDemo('bicycle')">
-            <img src="resources/images/bicycle.png" class="demo-scene-panel-image">
-            <span class="small-title">Bicycle</span>
-          </div>
-  
-          <div class="demo-scene-panel" onclick="openDemo('garden')">
-                <img src="resources/images/garden.png" class="demo-scene-panel-image">
-                <span class="small-title">Garden</span>
-            </div>
-            <div class="demo-scene-panel" onclick="openDemo('stump')">
-                <img src="resources/images/stump.png" class="demo-scene-panel-image">
-                <span class="small-title">Stump</span>
-            </div>
-            <div class="demo-scene-panel" onclick="openDemo('kitchen')">
-              <img src="resources/images/kitchen.png" class="demo-scene-panel-image">
-              <span class="small-title">Kitchen</span>
-            </div>
-
-          </div>
-
-          <div class="content-row">
-            <div class="demo-scene-panel" onclick="openDemo('chair')">
-              <img src="resources/images/chair.png" class="demo-scene-panel-image">
-              <span class="small-title">Chair</span>
-            </div>
-            <div class="demo-scene-panel" onclick="openDemo('ficus')">
-              <img src="resources/images/ficus.png" class="demo-scene-panel-image">
-              <span class="small-title">Ficus</span>
-            </div>
-            <div class="demo-scene-panel" onclick="openDemo('lego')">
-              <img src="resources/images/lego.png" class="demo-scene-panel-image">
-              <span class="small-title">Lego</span>
-            </div>
-            <div class="demo-scene-panel" onclick="openDemo('ship')">
-              <img src="resources/images/ship.png" class="demo-scene-panel-image">
-              <span class="small-title">Ship</span>
-            </div>
-          </div>
-
 
       </div>
     </div>
@@ -432,6 +344,7 @@
             of this website, 
             please also link back to the <a
               href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in your footer.
+            The video comparison and image comparison  with sliding bar is from <a href="https://niujinshuchong.github.io/mip-splatting/">Ref-NeRF</a>. 
 
           </p>
         </div>
