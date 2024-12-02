@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', domReady);
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'resources/360_stmt_supp/bicycle_0';
+                        image.src = 'img/replica/mono/room1/';
                         break;
                     case 1:
-                        image.src = 'resources/360_stmt_supp/bonsai_12';
+                        image.src = 'img/replica/mono/room2';
                         break;
                     case 2:
                         image.src = 'resources/360_stmt_supp/counter_19';
@@ -114,16 +114,19 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + '_ewa.jpg';
+                        image.src = image.src + 'monogs.jpg';
                         break;
                     case 1:
-                        image.src = image.src + '_ours.jpg';
+                        image.src = image.src + 'photoslam.jpg';
                         break;
                     case 2:
-                        image.src = image.src + '_upgt.jpg';
+                        image.src = image.src + 'photoslam30k.jpg';
                         break;
                     case 3:
-                        image.src = image.src + '_gt.jpg';
+                        image.src = image.src + 'ours.jpg';
+                        break;
+                    case 4:
+                        image.src = image.src + 'gt.jpg';
                         break;
 
                 }
