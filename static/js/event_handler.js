@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', domReady);
                 textPosition: "bottom"
 
             });
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[2],
+                hideTexts: false,
+                textPosition: "bottom"
+
+            });
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[3],
+                hideTexts: false,
+                textPosition: "bottom"
+
+            });
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[4],
+                hideTexts: false,
+                textPosition: "bottom"
+
+            });
         }
 
         function replicargbdSceneEvent(idx) {
@@ -79,7 +97,7 @@ document.addEventListener('DOMContentLoaded', domReady);
         }
 
         function replicamonoSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
+            let dics = document.querySelectorAll('.b-dics')[1]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
@@ -141,7 +159,7 @@ document.addEventListener('DOMContentLoaded', domReady);
         }
 
         function tummonoSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
+            let dics = document.querySelectorAll('.b-dics')[2]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
@@ -188,7 +206,7 @@ document.addEventListener('DOMContentLoaded', domReady);
         }
 
         function tumrgbdSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
+            let dics = document.querySelectorAll('.b-dics')[3]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
@@ -236,7 +254,7 @@ document.addEventListener('DOMContentLoaded', domReady);
         }
 
         function eurocstereoSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
+            let dics = document.querySelectorAll('.b-dics')[4]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
