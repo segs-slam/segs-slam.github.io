@@ -93,25 +93,26 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D Gaussian splatting (3D-GS) has recently revolutionized novel view synthesis 
-            in the Simultaneous Localization and Mapping (SLAM) problem. 
-            However, most existing algorithms fail to fully capture the underlying structure and detail of scenes, 
+            3D Gaussian splatting (3D-GS) has recently revolutionized novel view synthesis in the simultaneous 
+            localization and mapping (SLAM) problem. 
+            However, most existing algorithms fail to fully capture the underlying structure and the details of scene, 
             resulting in structural inconsistency and coarse details in output renderings. 
             Additionally, they struggle with abrupt appearance variations, leading to inconsistent visual quality. 
+
           </p>
           <p>
-            Our method, PRGS-SLAM, progressively refines 3D Gaussian splatting to achieve simultaneous localization 
-            and high-quality photorealistic mapping. 
-            Specifically, at the coarse level, our 3D scene representation first distributes 3D Gaussians by anchor 
-            points to capture global scene structure. At the fine level, we propose Appearance-from-Motion embedding, 
-            enabling 3D Gaussians to better model image appearance variations across different camera poses. 
-            Additionally, we introduce a frequency pyramid regularization to guide anchor densification, 
+            Our method, PRGS-SLAM, progressively refines 3D-GS to achieve simultaneous localization and high-quality 
+            photorealistic mapping. 
+            Specifically, our 3D scene representation first distributes 3D Gaussians by anchor points to capture global scene structure. 
+            We then propose Appearance-from-Motion embedding (AfME), enabling 3D Gaussians to better model 
+            image appearance variations across different camera poses. 
+            Furthermore, we introduce a frequency pyramid regularization (FPR) to guide anchor densification, 
             allowing the model to refine local details. 
           </p>
           <p>
-            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that 
-            PRGS-SLAM significantly outperforms state-of-the-art methods in photorealistic mapping quality, 
-            e.g., an improvement of 19.86% in PSNR on the TUM RGB-D datasets for monocular cameras.
+            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that PRGS-SLAM significantly 
+            outperforms state-of-the-art methods in photorealistic mapping quality, 
+            e.g., an improvement of 19.86% in PSNR over MonoGS on the TUM RGB-D dataset for monocular cameras. 
           </p>
         </div>
       </div>
