@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', domReady);
                         image.src = 'img/replica/mono/room1/';
                         break;
                     case 1:
-                        image.src = 'img/replica/mono/room2';
+                        image.src = 'img/replica/mono/room2/';
                         break;
                     case 2:
                         image.src = 'resources/360_stmt_supp/counter_19';
