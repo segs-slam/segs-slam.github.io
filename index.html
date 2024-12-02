@@ -28,6 +28,37 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- 添加滑块样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css">
+    <style>
+        .comparison-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .comparison-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            transition: clip-path 0.3s;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 5px;
+            background-color: #fff;
+            cursor: ew-resize;
+        }
+    </style>
 </head>
 <body>
 
@@ -152,7 +183,7 @@
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
             The input image stream is processed by the <b>tracking and geometric mapping modules</b>, generating high-quality point cloud and accurate poses. 
-            Subsequently, we employ a coarse-to-fine process to <b>progressively refine</b>b> the quality of photorealistic mapping. 
+            Subsequently, we employ a coarse-to-fine process to <b>progressively refine</b> the quality of photorealistic mapping. 
             The point cloud is used to incrementally construct anchor points. 
             The poses are then fed into the <b><span style="color: #0a0ae7">Appearance-from-Motion embedding</span></b> (AfME) to model lighting and other appearance variations in the scene. 
             Additionally, we introduce <b><span style="color: #e70a0a">frequency pyramid regularization</span></b> (FPR) to supervise the training of Gaussians, allowing for improved modeling of high-frequency details in the scene.
@@ -191,15 +222,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
 
-        <h3 class="title is-4">Comparison wtih 3DGS</h3>
+        <h3 class="title is-4">Monocular</h3>
         <div class="content has-text-justified">
           <p>
-            3DGS produces dilation and erosion artifacts due to the use of dilation. 
-            It produces erosion effects when zooming in or moving the camera closer. 
-            This is because the dilated 2D Gaussians become smaller in screen space, rendering object structures thinner than they actually appear.
-            Conversely, screen space dilation produces dilation artifacts when zooming out or moving away from the scene. 
-            In this case, dilated 2D Gaussian become bigger in screen space, rendering object structures thicker than they actually appear.
-            In contrast, our method is free of such artifacts by introducing a 3D smoothing filter and a 2D Mip filter.
+
           </p>
         </div>
         
@@ -209,20 +235,13 @@
         </div>
         
 
-        <h3 class="title is-4">Comparison wtih 3DGS + EWA</h3>
+        <h3 class="title is-4">RGB-D</h3>
         <div class="content has-text-justified">
           <p>
-            Replacing the 2D dilation of 3DGS with an EWA (elliptical weighted average) filter, denoted as 3DGS + EWA, reduces the dilation and erosion artifacts.
-            However, it produces high-frequency artifacts when zooming in, while our method is free of such artifacts, as shown in the following comparisons.
+
           </p>
         </div>
         
-        <!-- 
-        <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="resources/materials_3dgs_ewa_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
-        </div>
-        -->
 
         <div class="content has-text-centered">
           <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="resources/bonsai_3dgs_ewa_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
@@ -234,6 +253,18 @@
             Here, we show more comparisons with 3DGS + EWA. Both models are trained with downsampled images with factor 8 and render at higher-resolution. 
             GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
           </p>
+        </div>
+
+        <h3 class="title is-4">Stereo</h3>
+        <div class="content has-text-justified">
+          <p>
+
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/ship_3dgs_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         </div>
 
         <div class="container">
@@ -424,5 +455,51 @@
   </div>
 </footer>
 
+
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".comparison-container");
+            const image1 = document.getElementById("image1");
+            const image2 = document.getElementById("image2");
+            const slider = document.getElementById("slider");
+
+            let isDragging = false;
+
+            // Initialize the clipping path
+            function updateClipPath(x) {
+                const rect = container.getBoundingClientRect();
+                const relativeX = Math.max(0, Math.min(rect.width, x - rect.left));
+                const percentage = (relativeX / rect.width) * 100;
+                image2.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+                slider.style.left = `${percentage}%`;
+            }
+
+            // Event listeners for dragging the slider
+            slider.addEventListener("mousedown", () => (isDragging = true));
+            document.addEventListener("mouseup", () => (isDragging = false));
+            document.addEventListener("mousemove", (e) => {
+                if (isDragging) updateClipPath(e.clientX);
+            });
+
+            // Update initial state
+            updateClipPath(container.offsetWidth / 2);
+
+            // Event listener for tabs
+            window.ablation3DEvent = function (index) {
+                const images = [
+                    ["resources/360_stmt_ablation/bicycle_0_no3d.jpg", "resources/360_stmt_ablation/bicycle_0_ours.jpg"],
+                    ["resources/360_stmt_ablation/bicycle_1_no3d.jpg", "resources/360_stmt_ablation/bicycle_1_ours.jpg"],
+                ];
+
+                image1.src = images[index][0];
+                image2.src = images[index][1];
+
+                // Reset slider position
+                updateClipPath(container.offsetWidth / 2);
+            };
+        });
+    </script>
+  
 </body>
 </html>
