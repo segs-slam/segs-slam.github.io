@@ -13,7 +13,10 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
-
+  
+  
+  
+  
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -21,44 +24,21 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/72.png">
+
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
 
-  <!-- 添加滑块样式 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css">
-    <style>
-        .comparison-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-            overflow: hidden;
-        }
-
-        .comparison-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            transition: clip-path 0.3s;
-        }
-
-        .slider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 5px;
-            background-color: #fff;
-            cursor: ew-resize;
-        }
-    </style>
+  <link rel="stylesheet" href="./static/css/dics.original.css">
+  <script src="./static/js/event_handler.js"></script>
+  <script src="./static/js/dics.original.js"></script>
 </head>
 <body>
 
@@ -267,20 +247,40 @@
           <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         </div>
 
-    <div class="container">
-        <ul class="nav nav-tabs nav-fill nav-justified" id="ablation-3d-filter">
-            <!-- Tab Navigation -->
-            <li class="nav-item"><a class="nav-link active" onclick="ablation3DEvent(0)">bicycle 1</a></li>
-            <li class="nav-item"><a class="nav-link" onclick="ablation3DEvent(1)">bicycle 2</a></li>
-        </ul>
-
-        <!-- Comparison Container -->
-        <div class="comparison-container" id="comparisonContainer">
-            <img id="image1" src="resources/360_stmt_ablation/bicycle_0_no3d.jpg" alt="Image 1">
-            <img id="image2" src="resources/360_stmt_ablation/bicycle_0_ours.jpg" alt="Image 2">
-            <div class="slider" id="slider"></div>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(0)">bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(1)">bonsai</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(2)">counter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(3)">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(4)">garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(5)">kitchen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(6)">stump</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(7)">treehill</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="resources/360_stmt_supp/bonsai_12_3dgs.jpg" alt="3DGS+EWA">
+              <img src="resources/360_stmt_supp/bonsai_12_ours.jpg" alt="Mip-Splatting (ours)">
+              <img src="resources/360_stmt_supp/bonsai_12_upgt.jpg" alt="GT (Training resolution)">
+              <img src="resources/360_stmt_supp/bonsai_12_gt.jpg" alt="GT (8x resolution)">
+          </div>
         </div>
-    </div>
 
         <br>
 
@@ -436,50 +436,5 @@
 </footer>
 
 
-
-<script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector(".comparison-container");
-            const image1 = document.getElementById("image1");
-            const image2 = document.getElementById("image2");
-            const slider = document.getElementById("slider");
-
-            let isDragging = false;
-
-            // Initialize the clipping path
-            function updateClipPath(x) {
-                const rect = container.getBoundingClientRect();
-                const relativeX = Math.max(0, Math.min(rect.width, x - rect.left));
-                const percentage = (relativeX / rect.width) * 100;
-                image2.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
-                slider.style.left = `${percentage}%`;
-            }
-
-            // Event listeners for dragging the slider
-            slider.addEventListener("mousedown", () => (isDragging = true));
-            document.addEventListener("mouseup", () => (isDragging = false));
-            document.addEventListener("mousemove", (e) => {
-                if (isDragging) updateClipPath(e.clientX);
-            });
-
-            // Update initial state
-            updateClipPath(container.offsetWidth / 2);
-
-            // Event listener for tabs
-            window.ablation3DEvent = function (index) {
-                const images = [
-                    ["resources/360_stmt_ablation/bicycle_0_no3d.jpg", "resources/360_stmt_ablation/bicycle_0_ours.jpg"],
-                    ["resources/360_stmt_ablation/bicycle_1_no3d.jpg", "resources/360_stmt_ablation/bicycle_1_ours.jpg"],
-                ];
-
-                image1.src = images[index][0];
-                image2.src = images[index][1];
-
-                // Reset slider position
-                updateClipPath(container.offsetWidth / 2);
-            };
-        });
-    </script>
-  
 </body>
 </html>
