@@ -146,11 +146,18 @@
     <!-- Method OverView -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -20px">Motivation</h2>
+        <h2 class="title is-3" style="margin-top: -20px">Method OverView</h2>
 
-        <img src="./resources/teaser.png" class="center">
+        <img src="./img/diagram_proj.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
+            Overview of our method. Our method supports monocular, stereo, and RGB-D cameras. 
+            The input image stream is processed by the tracking and geometric mapping modules, generating high-quality point cloud and accurate poses. 
+            Subsequently, we employ a coarse-to-fine process to progressively refine the quality of photorealistic mapping. 
+            The point cloud is used to incrementally construct anchor points. 
+            The poses are then fed into the Appearance-from-Motion embedding (AfME) to model lighting and other appearance variations in the scene. 
+            Additionally, we introduce frequency pyramid regularization (FPR) to supervise the training of Gaussians, allowing for improved modeling of high-frequency details in the scene.
+            
             <b>3D Gaussian Splatting</b> renders images by representing 
             <b><span style="color: #0a0ae7">3D Objects</span></b> as <b>Gaussians</b> which are projected onto the image plane followed by <b><span style="color: #e70a0a">2D Dilation</span></b> in screen space as shown in (a). 
             The method's intrinsic shrinkage bias leads to degenerate 3D Gaussians exceed the sampling limit as illustrated by the &delta; function in (b) while rendering similarly to 2D due to the dilation operation. 
@@ -167,8 +174,8 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/D389imzYO04?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.youtube.com/embed/D389imzYO04?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
         </div>
       </div>
     </div>
