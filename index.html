@@ -224,7 +224,100 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results (Image)</h2>
 
+        <div class="content has-text-justified">
+          <p>
+            PRGS-SLAM achieves superior photorealistic mapping quality across monocular, stereo, and RGB-D cameras.
+          </p>
+        </div>
+
+        <h3 class="title is-4">RGB-D</h3>
+        <div class="content has-text-justified">
+          <p>
+            PRGS can accurately recover the contours of edge regions, validating the effectiveness of our FPR. 
+            Our PRGS-SLAM better reconstructs scene structure and lighting variations, benefiting from our structured 3D Gaussians and the AfME.
+          </p>
+        </div>
+        <div class="text-center">
+            <a
+              href="https://github.com/facebookresearch/Replica-Dataset"> Replica</a> Dataset
+        </div>
+        <br>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(0)">room 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="replicargbdSceneEvent(1)">room 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(2)">room 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(3)">office 0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(4)">office 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(5)">office 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(6)">office 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="replicargbdSceneEvent(7)">office 4</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="text-center">
+            <a
+              href="https://cvg.cit.tum.de/data/datasets/rgbd-dataset"> TUM RGB-D</a> Dataset
+        </div>
+        <br>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="tumrgbdSceneEvent(0)">fr1/xyz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="tumrgbdSceneEvent(1)">fr2/desk</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="tumrgbdSceneEvent(2)">fr3/long_office_household</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
+
+        <br>
+        
         <h3 class="title is-4">Monocular</h3>
+        
+        <div class="content has-text-justified">
+          <p>
+            Compared with RGB-D scenarios, PRGS's rendering quality does not decrease substantially, 
+            whereas Mono-GS experiences a sharp decline. 
+            On the Replica dataset, 
+            PRGS effectively models high-frequency details more realistically in regions such as the edge of the wall.
+          </p>
+        </div>
         <div class="text-center">
             <a
               href="https://github.com/facebookresearch/Replica-Dataset"> Replica</a> Dataset 
@@ -296,81 +389,14 @@
         </div>
 
         <br>
-             
-        <h3 class="title is-4">RGB-D</h3>
-
-        <div class="text-center">
-            <a
-              href="https://github.com/facebookresearch/Replica-Dataset"> Replica</a> Dataset
-        </div>
-        <br>
-        <div class="container">
-          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(0)">room 0</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" onclick="replicargbdSceneEvent(1)">room 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(2)">room 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(3)">office 0</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(4)">office 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(5)">office 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(6)">office 3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="replicargbdSceneEvent(7)">office 4</a>
-              </li>
-          </ul>
-          <div class="b-dics" style="width: 1000px; font-weight: 600;">
-              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
-              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
-              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
-              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
-              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
-          </div>
-        </div>
-
-        <br>
-
-        <div class="text-center">
-            <a
-              href="https://cvg.cit.tum.de/data/datasets/rgbd-dataset"> TUM RGB-D</a> Dataset
-        </div>
-        <br>
-        <div class="container">
-          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-              <li class="nav-item">
-                <a class="nav-link" onclick="tumrgbdSceneEvent(0)">fr1/xyz</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" onclick="tumrgbdSceneEvent(1)">fr2/desk</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="tumrgbdSceneEvent(2)">fr3/long_office_household</a>
-              </li>
-          </ul>
-          <div class="b-dics" style="width: 1000px; font-weight: 600;">
-              <img src="img/replica/mono/room1/monogs.jpg" alt="GS-ICP SLAM">
-              <img src="img/replica/mono/room1/photoslam.jpg" alt="SplaTAM">
-              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="RTG-SLAM">
-              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
-              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
-          </div>
-        </div>
-
-        <br>
 
         <h3 class="title is-4">Stereo</h3>
+        <div class="content has-text-justified">
+          <p>
+            PRGS remains effective in stereo scenarios, which demonstrates the broader applicability of our system. 
+            As shown in the following figures, PRGS better reconstructs the global structure and local details of the scene.
+          </p>
+        </div>
         <div class="text-center">
             <a
               href="https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets">EuRoC MAV</a> Dataset
