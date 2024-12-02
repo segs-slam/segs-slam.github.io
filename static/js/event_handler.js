@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', domReady);
             }
         }
 
-        function objectSceneEvent(idx) {
+        function replicamonoSceneEvent(idx) {
             let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 5
@@ -88,28 +88,28 @@ document.addEventListener('DOMContentLoaded', domReady);
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'img/replica/mono/room1/';
+                        image.src = 'img/replica/mono/room0/';
                         break;
                     case 1:
-                        image.src = 'img/replica/mono/room2/';
+                        image.src = 'img/replica/mono/room1/';
                         break;
                     case 2:
-                        image.src = 'resources/360_stmt_supp/counter_19';
+                        image.src = 'img/replica/mono/room2/';
                         break;
                     case 3:
-                        image.src = 'resources/360_stmt_supp/flowers_8';
+                        image.src = 'img/replica/mono/office0/';
                         break;
                     case 4:
-                        image.src = 'resources/360_stmt_supp/garden_1';
+                        image.src = 'img/replica/mono/office1/';
                         break;
                     case 5:
-                        image.src = 'resources/360_stmt_supp/kitchen_0';
+                        image.src = 'img/replica/mono/office2/';
                         break;
                     case 6:
-                        image.src = 'resources/360_stmt_supp/stump_0';
+                        image.src = 'img/replica/mono/office3/';
                         break;
                     case 7:
-                        image.src = 'resources/360_stmt_supp/treehill_0';
+                        image.src = 'img/replica/mono/office4/';
                         break;    
                 }
                 switch (i) {
