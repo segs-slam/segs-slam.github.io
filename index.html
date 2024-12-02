@@ -208,6 +208,44 @@
 
           </p>
         </div>
+
+          <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(0)">room1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(1)">room2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(2)">counter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(3)">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(4)">garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(5)">kitchen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(6)">stump</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(7)">treehill</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="img/replica/mono/room1/monogs.jpg" alt="MonoGS">
+              <img src="img/replica/mono/room1/photoslam.jpg" alt="Photo-SLAM">
+              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="Photo-SLAM-30K">
+              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
+              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
+          </div>
+        </div>
+
+        <br>
         
         <div class="content has-text-centered">
           <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/ship_3dgs_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
@@ -247,43 +285,7 @@
           <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         </div>
 
-        <div class="container">
-          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(0)">bicycle</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" onclick="objectSceneEvent(1)">bonsai</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(2)">counter</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(3)">flowers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(4)">garden</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(5)">kitchen</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(6)">stump</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(7)">treehill</a>
-              </li>
-          </ul>
-          <div class="b-dics" style="width: 1000px; font-weight: 600;">
-              <img src="img/replica/mono/room1/monogs.jpg" alt="MonoGS">
-              <img src="img/replica/mono/room1/photoslam.jpg" alt="Photo-SLAM">
-              <img src="img/replica/mono/room1/photoslam30k.jpg" alt="Photo-SLAM-30K">
-              <img src="img/replica/mono/room1/ours.jpg" alt="Ours">
-              <img src="img/replica/mono/room1/gt.jpg" alt="GT">
-          </div>
-        </div>
 
-        <br>
 
         <h3 class="title is-4">Effectiveness of 2D Mip Filter</h3>
         <div class="content has-text-justified">
