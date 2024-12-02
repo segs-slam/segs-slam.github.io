@@ -15,63 +15,61 @@ document.addEventListener('DOMContentLoaded', domReady);
             });
         }
 
-        function largeSceneEvent(idx) {
+        function replicargbdSceneEvent(idx) {
             let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 3
+            let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'assets/img/nvidia/';
+                        image.src = 'img/replica/rgbd/room0/';
                         break;
                     case 1:
-                        image.src = 'assets/img/jhu/';
+                        image.src = 'img/replica/rgbd/room1/';
                         break;
                     case 2:
-                        image.src = 'assets/img/Barn/';
+                        image.src = 'img/replica/rgbd/room2/';
                         break;
                     case 3:
-                        image.src = 'assets/img/Caterpillar/';
+                        image.src = 'img/replica/rgbd/office0/';
                         break;
                     case 4:
-                        image.src = 'assets/img/Courthouse/';
+                        image.src = 'img/replica/rgbd/office1/';
                         break;
                     case 5:
-                        image.src = 'assets/img/Ignatius/';
+                        image.src = 'img/replica/rgbd/office2/';
                         break;
                     case 6:
-                        image.src = 'assets/img/Meetingroom/';
+                        image.src = 'img/replica/rgbd/office3/';
                         break;
                     case 7:
-                        image.src = 'assets/img/Truck/';
-                        break;
+                        image.src = 'img/replica/rgbd/office4/';
+                        break;    
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + '/rgb.png';
+                        image.src = image.src + 'monogs.jpg';
                         break;
                     case 1:
-                        image.src = image.src + '/mesh.png';
+                        image.src = image.src + 'photoslam.jpg';
                         break;
                     case 2:
-                        image.src = image.src + '/normal.png';
+                        image.src = image.src + 'photoslam30k.jpg';
                         break;
+                    case 3:
+                        image.src = image.src + 'ours.jpg';
+                        break;
+                    case 4:
+                        image.src = image.src + 'gt.jpg';
+                        break;
+
                 }
             }
 
-            scene_list = document.getElementById("large-scale-recon-1").children;
+            let scene_list = document.getElementById("object-scale-recon").children;
             for (let i = 0; i < scene_list.length; i++) {
                 if (idx == i) {
-                    scene_list[i].children[0].className = "nav-link active"
-                }
-                else {
-                    scene_list[i].children[0].className = "nav-link"
-                }
-            }
-            scene_list = document.getElementById("large-scale-recon-2").children;
-            for (let i = 0; i < scene_list.length; i++) {
-                if (idx == i+2) {
                     scene_list[i].children[0].className = "nav-link active"
                 }
                 else {
@@ -128,6 +126,100 @@ document.addEventListener('DOMContentLoaded', domReady);
                     case 4:
                         image.src = image.src + 'gt.jpg';
                         break;
+                }
+            }
+
+            let scene_list = document.getElementById("object-scale-recon").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (idx == i) {
+                    scene_list[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list[i].children[0].className = "nav-link"
+                }
+            }
+        }
+
+        function tummonoSceneEvent(idx) {
+            let dics = document.querySelectorAll('.b-dics')[0]
+            let sections = dics.getElementsByClassName('b-dics__section')
+            let imagesLength = 5
+            for (let i = 0; i < imagesLength; i++) {
+                let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
+                switch (idx) {
+                    case 0:
+                        image.src = 'img/tum/mono/room0/';
+                        break;
+                    case 1:
+                        image.src = 'img/tum/mono/room1/';
+                        break;
+                    case 2:
+                        image.src = 'img/tum/mono/room2/';
+                        break; 
+                }
+                switch (i) {
+                    case 0:
+                        image.src = image.src + 'monogs.jpg';
+                        break;
+                    case 1:
+                        image.src = image.src + 'photoslam.jpg';
+                        break;
+                    case 2:
+                        image.src = image.src + 'photoslam30k.jpg';
+                        break;
+                    case 3:
+                        image.src = image.src + 'ours.jpg';
+                        break;
+                    case 4:
+                        image.src = image.src + 'gt.jpg';
+                        break;
+                }
+            }
+
+            let scene_list = document.getElementById("object-scale-recon").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (idx == i) {
+                    scene_list[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list[i].children[0].className = "nav-link"
+                }
+            }
+        }
+
+        function tumrgbdSceneEvent(idx) {
+            let dics = document.querySelectorAll('.b-dics')[0]
+            let sections = dics.getElementsByClassName('b-dics__section')
+            let imagesLength = 5
+            for (let i = 0; i < imagesLength; i++) {
+                let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
+                switch (idx) {
+                    case 0:
+                        image.src = 'img/tum/rgbd/room0/';
+                        break;
+                    case 1:
+                        image.src = 'img/tum/rgbd/room1/';
+                        break;
+                    case 2:
+                        image.src = 'img/tum/rgbd/room2/';
+                        break; 
+                }
+                switch (i) {
+                    case 0:
+                        image.src = image.src + 'gsicp.jpg';
+                        break;
+                    case 1:
+                        image.src = image.src + 'splatam.jpg';
+                        break;
+                    case 2:
+                        image.src = image.src + 'rtgslam.jpg';
+                        break;
+                    case 3:
+                        image.src = image.src + 'ours.jpg';
+                        break;
+                    case 4:
+                        image.src = image.src + 'gt.jpg';
+                        break;
 
                 }
             }
@@ -143,49 +235,46 @@ document.addEventListener('DOMContentLoaded', domReady);
             }
         }
 
-        function ablation3DEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[1]
+        function eurocstereoSceneEvent(idx) {
+            let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 4
+            let imagesLength = 5
             for (let i = 0; i < imagesLength; i++) {
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'resources/360_stmt_ablation/bicycle_0';
+                        image.src = 'img/euroc/stereo/mh01/';
                         break;
                     case 1:
-                        image.src = 'resources/360_stmt_ablation/bicycle_3';
+                        image.src = 'img/euroc/stereo/mh02/';
                         break;
                     case 2:
-                        image.src = 'resources/360_stmt_ablation/bicycle_5';
-                        break;
-                    case 3:
-                        image.src = 'resources/360_stmt_ablation/garden_0';
+                        image.src = 'img/euroc/stereo/v101/';
                         break; 
-                    case 4:
-                        image.src = 'resources/360_stmt_ablation/garden_1';
-                        break;
-                    case 5:
-                        image.src = 'resources/360_stmt_ablation/treehill_9';
+                    case 2:
+                        image.src = 'img/euroc/stereo/v201/';
                         break; 
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + '_no3d.jpg';
+                        image.src = image.src + 'monogs.jpg';
                         break;
                     case 1:
-                        image.src = image.src + '_ours.jpg';
+                        image.src = image.src + 'photoslam.jpg';
                         break;
                     case 2:
-                        image.src = image.src + '_upgt.jpg';
+                        image.src = image.src + 'photoslam30k.jpg';
                         break;
                     case 3:
-                        image.src = image.src + '_gt.jpg';
+                        image.src = image.src + 'ours.jpg';
+                        break;
+                    case 4:
+                        image.src = image.src + 'gt.jpg';
                         break;
                 }
             }
 
-            let scene_list = document.getElementById("ablation-3d-filter").children;
+            let scene_list = document.getElementById("object-scale-recon").children;
             for (let i = 0; i < scene_list.length; i++) {
                 if (idx == i) {
                     scene_list[i].children[0].className = "nav-link active"
@@ -195,3 +284,4 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
             }
         }
+
