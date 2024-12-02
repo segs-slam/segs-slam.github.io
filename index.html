@@ -38,12 +38,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h2 class="col-md-12 text-center">
-              <b>PRGS-SLAM:</b> Progressively Refined  3D Gaussian Splatting for Monocular, Stereo, and RGB-D SLAM </br>            
-          </h2>
-          <h1 class="title is-1 publication-title">PRGS-SLAM: Progressive Refined  3D Gaussian Splatting for Monocular, Stereo, and RGB-D SLAM</h1>
-
-
+          
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>PRGS-SLAM</strong></h1>
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Progressively Refined  3D Gaussian Splatting for Monocular, Stereo, and RGB-D SLAM</h2>
+          
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -86,7 +84,23 @@
   </div>
 </section>
 
-
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+      
+          <video class="video" width="100%" id="xyalias6" loop playsinline autoplay muted src="resources/video1.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>
+      
+          <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+            TL;DR: We introduce an Appearance-from-Motion embedding and a frequency pyramid regularization for structured 3D Gaussian Splatting (3DGS), modeling better appearance variations and refine local details.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -125,9 +139,250 @@
   </div>
 </section>
 
-<!--
 
- -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method OverView -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Motivation</h2>
+
+        <img src="./resources/teaser.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <b>3D Gaussian Splatting</b> renders images by representing 
+            <b><span style="color: #0a0ae7">3D Objects</span></b> as <b>Gaussians</b> which are projected onto the image plane followed by <b><span style="color: #e70a0a">2D Dilation</span></b> in screen space as shown in (a). 
+            The method's intrinsic shrinkage bias leads to degenerate 3D Gaussians exceed the sampling limit as illustrated by the &delta; function in (b) while rendering similarly to 2D due to the dilation operation. 
+            However, when changing the sampling rate (via the focal length or camera distance), we observe strong dilation effects (c) and high frequency artifacts (d).
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+    
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/D389imzYO04?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+
+        <h3 class="title is-4">Comparison wtih 3DGS</h3>
+        <div class="content has-text-justified">
+          <p>
+            3DGS produces dilation and erosion artifacts due to the use of dilation. 
+            It produces erosion effects when zooming in or moving the camera closer. 
+            This is because the dilated 2D Gaussians become smaller in screen space, rendering object structures thinner than they actually appear.
+            Conversely, screen space dilation produces dilation artifacts when zooming out or moving away from the scene. 
+            In this case, dilated 2D Gaussian become bigger in screen space, rendering object structures thicker than they actually appear.
+            In contrast, our method is free of such artifacts by introducing a 3D smoothing filter and a 2D Mip filter.
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="resources/ship_3dgs_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
+        </div>
+        
+
+        <h3 class="title is-4">Comparison wtih 3DGS + EWA</h3>
+        <div class="content has-text-justified">
+          <p>
+            Replacing the 2D dilation of 3DGS with an EWA (elliptical weighted average) filter, denoted as 3DGS + EWA, reduces the dilation and erosion artifacts.
+            However, it produces high-frequency artifacts when zooming in, while our method is free of such artifacts, as shown in the following comparisons.
+          </p>
+        </div>
+        
+        <!-- 
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="resources/materials_3dgs_ewa_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
+        </div>
+        -->
+
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="resources/bonsai_3dgs_ewa_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias9Merge"></canvas>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            Here, we show more comparisons with 3DGS + EWA. Both models are trained with downsampled images with factor 8 and render at higher-resolution. 
+            GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
+          </p>
+        </div>
+
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(0)">bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(1)">bonsai</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(2)">counter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(3)">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(4)">garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(5)">kitchen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(6)">stump</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(7)">treehill</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="resources/360_stmt_supp/bonsai_12_3dgs.jpg" alt="3DGS+EWA">
+              <img src="resources/360_stmt_supp/bonsai_12_ours.jpg" alt="Mip-Splatting (ours)">
+              <img src="resources/360_stmt_supp/bonsai_12_upgt.jpg" alt="GT (Training resolution)">
+              <img src="resources/360_stmt_supp/bonsai_12_gt.jpg" alt="GT (8x resolution)">
+          </div>
+        </div>
+
+        <br>
+
+        <h3 class="title is-4">Effectiveness of 2D Mip Filter</h3>
+        <div class="content has-text-justified">
+          <p>
+            Our 2D Mip filter simulates a 2D box filter in physical imaging process. It approximates exactly 1 pixel in screen space, thus effectively reducing aliasing artifacts.
+            As shown in the following video, removing the 2D Mip filter results in aliasing artifacts when zooming out.
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias3" loop playsinline autoplay muted src="resources/chair_ours_no2d_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias3Merge"></canvas>
+        </div>
+
+        <h3 class="title is-4">Effectiveness of 3D Smoothing Filter</h3>
+        <div class="content has-text-justified">
+          <p>
+            The 3D smoothing filter constrains the size of the 3D Gaussian primitives based on the maximal sampling frequency induced by the training views, eliminating high frequency artifacts when zooming in. 
+            In the following comparisons, we train the models with downsampled images and render high resolution images to simulate zoom-in effects. Excluding the 3D smoothing filter results in high-frequency artifacts. 
+            Note that both models are trained with downsampled images with factor 8 and render at higher-resolution. 
+            GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
+          </p>
+        </div>
+        
+        <!-- 
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias5" loop playsinline autoplay muted src="./resources/drums_ours_no3d_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias5Merge"></canvas>
+        </div> 
+        -->
+
+
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="ablation-3d-filter">
+              <li class="nav-item">
+                <a class="nav-link active" onclick="ablation3DEvent(0)">bicycle 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="ablation3DEvent(1)">bicycle 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="ablation3DEvent(2)">bicycle 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="ablation3DEvent(3)">garden 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="ablation3DEvent(4)">garden 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="ablation3DEvent(5)">treehill</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 1000px; font-weight: 600;">
+              <img src="resources/360_stmt_ablation/bicycle_0_no3d.jpg" alt="Ours w/o 3D filter">
+              <img src="resources/360_stmt_ablation/bicycle_0_ours.jpg" alt="Mip-Splatting (ours)">
+              <img src="resources/360_stmt_ablation/bicycle_0_upgt.jpg" alt="GT (Training resolution)">
+              <img src="resources/360_stmt_ablation/bicycle_0_gt.jpg" alt="GT (8x resolution)">
+              
+          </div>
+        </div>
+
+        <br><br>
+
+        <h3 class="title is-4">Real-Time Interactive Viewer</h3>
+        <div class="content has-text-justified">
+          <p>
+            Click the image to use the real-time interactive viewer. Please open the viewer with Chrome or Firefox. For more results, please check our <a href="https://niujinshuchong.github.io/mip-splatting-demo/">online viewer</a>. 
+          </p>
+        </div>
+
+        <div class="content-row">
+          <div class="demo-scene-panel" onclick="openDemo('bicycle')">
+            <img src="resources/images/bicycle.png" class="demo-scene-panel-image">
+            <span class="small-title">Bicycle</span>
+          </div>
+  
+          <div class="demo-scene-panel" onclick="openDemo('garden')">
+                <img src="resources/images/garden.png" class="demo-scene-panel-image">
+                <span class="small-title">Garden</span>
+            </div>
+            <div class="demo-scene-panel" onclick="openDemo('stump')">
+                <img src="resources/images/stump.png" class="demo-scene-panel-image">
+                <span class="small-title">Stump</span>
+            </div>
+            <div class="demo-scene-panel" onclick="openDemo('kitchen')">
+              <img src="resources/images/kitchen.png" class="demo-scene-panel-image">
+              <span class="small-title">Kitchen</span>
+            </div>
+
+          </div>
+
+          <div class="content-row">
+            <div class="demo-scene-panel" onclick="openDemo('chair')">
+              <img src="resources/images/chair.png" class="demo-scene-panel-image">
+              <span class="small-title">Chair</span>
+            </div>
+            <div class="demo-scene-panel" onclick="openDemo('ficus')">
+              <img src="resources/images/ficus.png" class="demo-scene-panel-image">
+              <span class="small-title">Ficus</span>
+            </div>
+            <div class="demo-scene-panel" onclick="openDemo('lego')">
+              <img src="resources/images/lego.png" class="demo-scene-panel-image">
+              <span class="small-title">Lego</span>
+            </div>
+            <div class="demo-scene-panel" onclick="openDemo('ship')">
+              <img src="resources/images/ship.png" class="demo-scene-panel-image">
+              <span class="small-title">Ship</span>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
