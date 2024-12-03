@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', domReady);
                     case 2:
                         image.src = 'img/euroc/stereo/v101/';
                         break; 
-                    case 2:
+                    case 3:
                         image.src = 'img/euroc/stereo/v201/';
                         break; 
                 }
