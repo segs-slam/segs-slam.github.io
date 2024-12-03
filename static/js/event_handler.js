@@ -115,13 +115,13 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + 'gsicp.jpg';
+                        image.src = image.src + 'gsicp.png';
                         break;
                     case 1:
-                        image.src = image.src + 'splatam.jpg';
+                        image.src = image.src + 'splatam.png';
                         break;
                     case 2:
-                        image.src = image.src + 'rtgslam.jpg';
+                        image.src = image.src + 'rtgslam.png';
                         break;
                     case 3:
                         image.src = image.src + 'ours.jpg';
