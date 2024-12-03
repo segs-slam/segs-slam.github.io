@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + 'monogs.jpg';
+                        image.src = image.src + 'gsicp.png';
                         break;
                     case 1:
-                        image.src = image.src + 'photoslam.jpg';
+                        image.src = image.src + 'splatam.png';
                         break;
                     case 2:
-                        image.src = image.src + 'photoslam30k.jpg';
+                        image.src = image.src + 'rtgslam.png';
                         break;
                     case 3:
                         image.src = image.src + 'ours.jpg';
