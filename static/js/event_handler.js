@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', domReady);
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'img/tum/rgbd/room0/';
+                        image.src = 'img/tum/rgbd/fr1/';
                         break;
                     case 1:
-                        image.src = 'img/tum/rgbd/room1/';
+                        image.src = 'img/tum/rgbd/fr2/';
                         break;
                     case 2:
-                        image.src = 'img/tum/rgbd/room2/';
+                        image.src = 'img/tum/rgbd/fr3/';
                         break; 
                 }
                 switch (i) {
@@ -215,24 +215,24 @@ document.addEventListener('DOMContentLoaded', domReady);
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'img/tum/mono/room0/';
+                        image.src = 'img/tum/mono/fr1/';
                         break;
                     case 1:
-                        image.src = 'img/tum/mono/room1/';
+                        image.src = 'img/tum/mono/fr2/';
                         break;
                     case 2:
-                        image.src = 'img/tum/mono/room2/';
+                        image.src = 'img/tum/mono/fr3/';
                         break; 
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + 'monogs.jpg';
+                        image.src = image.src + 'monogs.png';
                         break;
                     case 1:
-                        image.src = image.src + 'photoslam.jpg';
+                        image.src = image.src + 'photoslam.png';
                         break;
                     case 2:
-                        image.src = image.src + 'photoslam30k.jpg';
+                        image.src = image.src + 'photoslam30k.png';
                         break;
                     case 3:
                         image.src = image.src + 'ours.jpg';
@@ -276,13 +276,13 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + 'monogs.jpg';
+                        image.src = image.src + 'monogs.png';
                         break;
                     case 1:
-                        image.src = image.src + 'photoslam.jpg';
+                        image.src = image.src + 'photoslam.png';
                         break;
                     case 2:
-                        image.src = image.src + 'photoslam30k.jpg';
+                        image.src = image.src + 'photoslam30k.png';
                         break;
                     case 3:
                         image.src = image.src + 'ours.jpg';
