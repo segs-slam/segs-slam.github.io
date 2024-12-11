@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
                 switch (i) {
                     case 0:
-                        image.src = image.src + 'monogs.jpg';
+                        image.src = image.src + 'monogs.png';
                         break;
                     case 1:
                         image.src = image.src + 'photoslam.jpg';
