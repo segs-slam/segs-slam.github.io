@@ -194,50 +194,6 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- Results. -->
-    <div class="columns is-centered ">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results (Video)</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            Here, we present the comparisons of our method against the current state-of-the-art methods, 
-            including Photo-SLAM (CVPR 2024), MonoGS (CVPR 2024), SplaTAM (CVPR 2024), RTG-SLAM (SIGGRAPH 2024), and GS-ICP SLAM (ECCV 2024).
-          </p>
-        </div>      
-
-        <h3 class="title is-4">Comparison wtih GS-ICP SLAM</h3>
-        <div class="content has-text-justified">
-          <p>
-            On Replica Dataset for RGB-D camera.
-          </p>
-        </div>
-        
-        <div class="content has-text-centered" >
-          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="video/replica_rgbd_gsicp_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
-        </div>
-
-        <h3 class="title is-4">Comparison wtih Photo-SLAM</h3>
-        <div class="content has-text-justified">
-          <p>
-            On Replica Dataset for monocular camera.
-          </p>
-        </div>
-        
-        <div class="content has-text-centered" >
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="video/replicamono_photoslam_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
 
   
 <section class="section">
@@ -250,9 +206,12 @@
 
         <div class="content has-text-justified">
           <p>
-            PRGS-SLAM achieves superior photorealistic mapping quality across monocular, stereo, and RGB-D cameras.
+            Here, we present the comparisons of our method against the current state-of-the-art methods, 
+            including Photo-SLAM (CVPR 2024), MonoGS (CVPR 2024), SplaTAM (CVPR 2024), RTG-SLAM (SIGGRAPH 2024), and GS-ICP SLAM (ECCV 2024).
+            Our PRGS-SLAM achieves superior photorealistic mapping quality across monocular, stereo, and RGB-D cameras.
           </p>
-        </div>
+        </div>      
+
 
         <h3 class="title is-4">RGB-D Camera</h3>
         <div class="content has-text-justified">
@@ -261,6 +220,12 @@
             Our PRGS-SLAM better reconstructs scene structure and lighting variations, benefiting from our structured 3D Gaussians and the AfME.
           </p>
         </div>
+
+        <div class="content has-text-centered" >
+          <video class="video" width="100%" id="xyalias2" loop playsinline autoplay muted src="video/replica_rgbd_gsicp_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias2Merge"></canvas>
+        </div>
+        
         <div class="text-center">
             <a
               href="https://github.com/facebookresearch/Replica-Dataset"> Replica</a> Dataset
@@ -342,6 +307,12 @@
             PRGS effectively models high-frequency details more realistically in regions such as the edge of the wall.
           </p>
         </div>
+
+        <div class="content has-text-centered" >
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="video/replicamono_photoslam_vs_ours.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
+        </div>
+        
         <div class="text-center">
             <a
               href="https://github.com/facebookresearch/Replica-Dataset"> Replica</a> Dataset 
