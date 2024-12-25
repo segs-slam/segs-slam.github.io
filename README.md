@@ -1,4 +1,4 @@
-# PRGS-SLAM: Progressive Refined  3D Gaussian Splatting for for Monocular, Stereo, and RGB-D SLAM
+# PRGS-SLAM: Progressively Refined  3D Gaussian Splatting for for Monocular, Stereo, and RGB-D SLAM
 
 This is the repository that contains source code for the [PRGS-SLAM website](https://prgs-slam.github.io/).
 
