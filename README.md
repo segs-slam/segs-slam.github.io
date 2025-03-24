@@ -1,12 +1,10 @@
-# PRGS-SLAM: Progressively Refined  3D Gaussian Splatting for for Monocular, Stereo, and RGB-D SLAM
+# SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding
 
-This is the repository that contains source code for the [PRGS-SLAM website](https://prgs-slam.github.io/).
+This is the repository that contains source code for the [PRGS-SLAM website](https://segs-slam.github.io/).
 
 #TODO:
 
-1.Add fancy figures and videos to the website.
-
-2.Open source the code of the work.
+1.Open source the code of the work.
 
 
 # Website License
