@@ -152,8 +152,8 @@
             First, we propose a structure-enhanced photorealistic mapping (SEPM) framework that, for the first time, 
             leverages highly structured point cloud to initialize structured 3D Gaussians, leading to significant improvements in rendering quality. 
             Second, we propose Appearance-from-Motion embedding (AfME), enabling 3D Gaussians to better model image appearance variations across different camera poses. 
-            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that SEGS-SLAM significantly outperforms state-of-the-art (SOTA) methods in photorealistic mapping quality, e.g., an improvement of 19.86%
-           in PSNR over MonoGS on the TUM RGB-D dataset for monocular cameras. 
+            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that SEGS-SLAM significantly outperforms state-of-the-art (SOTA) methods in photorealistic mapping quality, e.g., an improvement of 
+            <b><span style="color: #0a0ae7">19.86%</span></b> in PSNR over MonoGS on the TUM RGB-D dataset for monocular cameras. 
           </p>
         </div>
       </div>
@@ -175,9 +175,9 @@
         <img src="./img/diagram_proj.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            The input image stream is processed by the localization and geometric mapping modules, generating point cloud and accurate poses. <b><span style="color: #0a0ae7">Structure-Enhanced Photorealistic Mapping
+            The input image stream is processed by the localization and geometric mapping modules, generating point cloud and accurate poses. <b><span style="color: #e70a0a">Structure-Enhanced Photorealistic Mapping
              (SEPM)</span></b> incrementally initializes anchor points
-            (middle) based on the point cloud (top left), which preserves the underlying structure. The poses are then fed into the <b><span style="color: #e70a0a">Appearance-from-Motion embedding (AfME)</span></b> to model
+            (middle) based on the point cloud (top left), which preserves the underlying structure. The poses are then fed into the <b><span style="color: #0a0ae7">Appearance-from-Motion embedding (AfME)</span></b> to model
             appearance variations in the scene. Additionally, we introduce <b>frequency pyramid regularization (FPR)</b> to improve the reconstruction of high-frequency details in the scene.
           </p>
         </div>
