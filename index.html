@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with View-independent Appearance Modeling">
+        content="SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding">
   <meta name="keywords" content="3D-GS, SLAM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SEGS-SLAM</title>
@@ -55,7 +55,7 @@
           <div class="column is-full-width">
           
           <h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>SEGS-SLAM</strong></h1>
-          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Structure-enhanced 3D Gaussian Splatting SLAM with View-independent Appearance Modeling</h2>
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding</h2>
           
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -144,17 +144,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D Gaussian splatting (3D-GS) has recently revolutionized novel view synthesis in the  
-            simultaneous localization and mapping (SLAM) problem. However, most existing algorithms 
-            fail to fully capture the underlying structure, resulting in structural inconsistency. 
+            3D Gaussian splatting (3D-GS) has recently revolutionized novel view synthesis in the simultaneous localization and mapping (SLAM) problem. 
+            However, most existing algorithms fail to fully capture the underlying structure, resulting in structural inconsistency. 
             Additionally, they struggle with abrupt appearance variations, leading to inconsistent visual quality. 
-            To address these problems,  we propose SEGS-SLAM, a tructure-enhanced 3D Gaussian Splatting SLAM, 
-            which achieves high-quality photorealistic mapping. 
-            Our two main contributions are as follows: First, we propose a Geometry-Enhanced Photorealistic Mapping (GEPM) framework that,
-            for the first time, leverages highly structured point clouds to initialize structured 3D Gaussians, leading to significant improvements in rendering quality. 
-            Second, We propose Appearance-from-Motion embedding (AfME), enabling 3D Gaussians to better model image appearance variations across different camera poses.
-            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that SEGS-SLAM significantly outperforms state-of-the-art methods in photorealistic mapping quality, 
-            e.g., an improvement of 19.86\% in PSNR over MonoGS on the TUM RGB-D dataset for monocular cameras. 
+            To address these problems, we propose SEGS-SLAM, a structure-enhanced 3D Gaussian Splatting SLAM, which achieves high-quality photorealistic mapping. 
+            Our main contributions are two-fold. 
+            First, we propose a structure-enhanced photorealistic mapping (SEPM) framework that, for the first time, 
+            leverages highly structured point cloud to initialize structured 3D Gaussians, leading to significant improvements in rendering quality. 
+            Second, we propose Appearance-from-Motion embedding (AfME), enabling 3D Gaussians to better model image appearance variations across different camera poses. 
+            Extensive experiments on monocular, stereo, and RGB-D datasets demonstrate that SEGS-SLAM significantly outperforms state-of-the-art (SOTA) methods in photorealistic mapping quality, e.g., an improvement of 
+           in PSNR over MonoGS on the TUM RGB-D dataset for monocular cameras. 
           </p>
         </div>
       </div>
