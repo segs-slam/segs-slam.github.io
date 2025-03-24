@@ -175,11 +175,10 @@
         <img src="./img/diagram_proj.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            The input image stream is processed by the <b>tracking and geometric mapping modules</b>, generating high-quality point cloud and accurate poses. 
-            Subsequently, we employ a coarse-to-fine process to <b>progressively refine</b> the quality of photorealistic mapping. 
-            The point cloud is used to incrementally construct anchor points. 
-            The poses are then fed into the <b><span style="color: #0a0ae7">Appearance-from-Motion embedding (AfME)</span></b> to model lighting and other appearance variations in the scene. 
-            Additionally, we introduce <b><span style="color: #e70a0a">frequency pyramid regularization (FPR)</span></b> to supervise the training of Gaussians, allowing for improved modeling of high-frequency details in the scene.
+            The input image stream is processed by the localization and geometric mapping modules, generating point cloud and accurate poses. <b><span style="color: #0a0ae7">Structure-Enhanced Photorealistic Mapping
+             (SEPM)</span></b> incrementally initializes anchor points
+            (middle) based on the point cloud (top left), which preserves the underlying structure. The poses are then fed into the <b><span style="color: #e70a0a">Appearance-from-Motion embedding (AfME)</span></b> to model
+            appearance variations in the scene. Additionally, we introduce <b>frequency pyramid regularization (FPR)</b> to improve the reconstruction of high-frequency details in the scene.
           </p>
         </div>
 
