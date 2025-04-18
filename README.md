@@ -1,6 +1,6 @@
 # SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding
 
-This is the repository that contains source code for the [PRGS-SLAM website](https://segs-slam.github.io/).
+This is the repository that contains source code for the [SEGS-SLAM website](https://segs-slam.github.io/).
 
 #TODO:
 
